@@ -1,2 +1,10 @@
-# Lecture1-Intro-Python-GIS
-Lecture 1: Introduction to Python GIS and geometric objects. 
+---
+anaconda-cloud: {}
+---
+
+# Lesson 1 - Introduction to Python-GIS
+
+## Contents
+
+- [Introduction to Python GIS](Intro-Python-GIS.md)
+- [Spatial data model / Geometric Objects]()
