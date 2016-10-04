@@ -1,3 +1,7 @@
+---
+anaconda-cloud: {}
+---
+
 # Geometric Objects - Spatial Data Model
 
 <img src="http://www.helsinki.fi/science/accessibility/maintenance/Kuvia/SpatialDataModel.PNG">
