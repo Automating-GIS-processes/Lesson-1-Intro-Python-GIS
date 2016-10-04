@@ -1,7 +1,3 @@
----
-anaconda-cloud: {}
----
-
 # Lesson 1 - Introduction to Python-GIS
 
 ## Contents
