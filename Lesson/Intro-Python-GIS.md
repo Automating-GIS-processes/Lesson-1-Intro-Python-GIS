@@ -12,7 +12,9 @@ At the end of the course you should be able to:
  - Do different geometric operations and geocoding
  - Do spatial queries
  - Do simple spatial analyses
- - Visualize data and create (interactive) maps, such as (click to open in interactive mode with zooming and hovering):
+ - Visualize data and create (interactive) maps
+ 
+*Click to open in interactive mode with zooming and hovering:*
  
 <a href="http://www.helsinki.fi/science/accessibility/opetus/autogis/texas_unemployment.html" target="_blank"><img src="../img/Texas_map.PNG" alt="thumb" width="400"/></a>
 
