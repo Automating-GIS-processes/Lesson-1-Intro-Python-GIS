@@ -14,7 +14,7 @@ At the end of the course you should be able to:
  - Do simple spatial analyses
  - Visualize data and create (interactive) maps, such as (click to open in interactive mode):
  
-<a href="http://www.helsinki.fi/science/accessibility/opetus/autogis/texas_unemployment.html" target="_blank"><img src="../img/Texas_map.PNG" alt="thumb" style="width:400px;border:none;margin:0;padding:0"/></a>
+<a href="http://www.helsinki.fi/science/accessibility/opetus/autogis/texas_unemployment.html" target="_blank"><img src="../img/Texas_map.PNG" alt="thumb" width="400"/></a>
 
 Python is extremely useful language to learn in terms of GIS since many (or most) of the different GIS Software packages (such
 as ArcGIS, QGIS, PostGIS etc.) provide an interface to do analysis using Python scripting. During this course, we will mostly focus on doing GIS without any third
