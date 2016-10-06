@@ -12,9 +12,9 @@ At the end of the course you should be able to:
  - Do different geometric operations and geocoding
  - Do spatial queries
  - Do simple spatial analyses
- - Visualize data and create (interactive) maps, such as:
+ - Visualize data and create (interactive) maps, such as (click to open):
  
-<a href="http://htmlpreview.github.com/?https://github.com/Automating-GIS-processes/Lesson-1-Intro-Python-GIS/blob/master/img/texas_unemployment.html"><img src="https://github.com/Automating-GIS-processes/Lesson-1-Intro-Python-GIS/blob/master/img/Texas_map.PNG" width="400" target="_blank"></a>
+<a href="http://www.helsinki.fi/science/accessibility/opetus/autogis/texas_unemployment.html"><img src="https://github.com/Automating-GIS-processes/Lesson-1-Intro-Python-GIS/blob/master/img/Texas_map.PNG" width="400" target="_blank"></a>
  
 ## What sort of tools are available for doing GIS in pure Python?
 
