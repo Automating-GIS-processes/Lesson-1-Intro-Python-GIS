@@ -22,3 +22,5 @@ __It is also possible to have collections of geometric objects (e.g. Polygons wi
   - *__MultiPoint__* object consists of a list of coordinate-tuples ( examplePoints = MultiPoint([(-2.2, 24.5), (12.9, -43.7)]) )
   - *__MultiLineString__* object consists of a list of line-like sequences ( exampleLines = MultiLineString([((0, 0), (1, 1)), ((-1, 0), (1, 0))]) )
   - *__MultiPolygon__* object consists of a list of polygon-like sequences that construct from exterior ring and (possible) hole list tuples ( [((a1, ..., aM), [(b1, ..., bN), ...]), ...] )
+
+

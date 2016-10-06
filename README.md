@@ -17,6 +17,8 @@ and Geospatial Data Model.
 
 ## Lesson overview
 
-- [Introduction to Python GIS. What is out there?](Lesson/Intro-Python-GIS.md)
-- [Spatial data model / Geometric Objects](Lesson/Geometric-Objects.md)
+- [Introduction to Python GIS](Lesson/Intro-Python-GIS.md)
+  - [General overview of the latter part of the course](Lesson/Intro-Python-GIS.md#overview)
+  - [What sort of tools are available for doing GIS in pure Python?](Lesson/Intro-Python-GIS.md#modules)
+- [Spatial Data Model / Geometric Objects](Lesson/Geometric-Objects.md)
 
