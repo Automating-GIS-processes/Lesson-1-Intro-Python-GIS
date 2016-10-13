@@ -56,8 +56,8 @@ POINT (7.2 -25.1)
 
 ```python
 # Calculate the distance between point1 and point2
->>> point_dist = point1.distance(point2)
->>> print("Distance between our points: ", point_dist, "decimal degrees")
+point_dist = point1.distance(point2)
+print("Distance between our points: ", point_dist, "decimal degrees")
 # Outputs:
 Distance between our points:  29.723559679150142 decimal degrees
 ```
