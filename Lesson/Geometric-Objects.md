@@ -1,6 +1,6 @@
 # Geometric Objects - Spatial Data Model
 
-**Contents:**
+###Contents:
 
 1. [Overview of geometric objects and Shapely -modules](#1-overview-of-geometric-objects-and-shapely--module)
 2. [Point](#2-point)
