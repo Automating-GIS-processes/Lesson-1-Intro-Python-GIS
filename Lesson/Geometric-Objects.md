@@ -1,8 +1,21 @@
----
-anaconda-cloud: {}
----
-
 # Geometric Objects - Spatial Data Model
+
+**Contents:**
+1. [Overview of geometric objects and Shapely -modules]
+2. [Point]()
+  - [Creating a Point -object]()
+  - [Point attributes and functions]()
+3. [LineString (i.e. a line)]()
+  - [Creating a LineString -object]()
+  - [LineString attributes and functions]()
+4. [Polygon]()
+  - [Creating a Polygon -object]()
+  - [Polygon attributes and functions]()
+5. [Pro -tips]()
+  - [Geometry collections]()
+  - [Useful functions]()
+
+## 1. Overview of geometric objects and Shapely -module
 
 <img src="http://www.helsinki.fi/science/accessibility/maintenance/Kuvia/SpatialDataModel.PNG">
 *Fundamental geometric objects that can be used in Python with <a href="http://toblerity.org/shapely/manual.html"><strong>Shapely</strong></a> module*
@@ -29,7 +42,7 @@ There are many useful functionalities that you can do with Shapely such as:
   - **MultiLineString** -object represents a collection of lines and consists of a list of line-like sequences 
   - **MultiPolygon** -object represents a collection of polygons that consists of a list of polygon-like sequences that construct from exterior ring and (possible) hole list tuples 
 
-## Point
+## 2. Point
 
 - Creating point is easy, you pass x and y coordinates into Point() -object (+ possibly also z -coordinate) :
 
@@ -106,7 +119,7 @@ Okey, so we can see that the our xy variable contains a tuple where x and y are 
 Distance between the points is 29.72 decimal degrees
 ```
 
-## LineString
+## 3. LineString
 
 - Creating a LineString -object is fairly similar to how Point is created. Now instead using a single coordinate-tuple we can construct the line using either a list of shapely Point -objects or pass coordinate-tuples:
 
@@ -179,7 +192,7 @@ shapely.geometry.point.Point
 
 Okey, so these are already fairly useful information for many different GIS tasks, and we didn't even calculate anything yet! These attributes are built-in in every LineString object that is created. Notice that the centroid that is returned is Point -object that has its own functions as was described earlier.
 
-## Polygon
+## 4. Polygon
 
 - Creating a Polygon -object continues the same logic of how Point and LineString were created but Polygon object only accepts coordinate-tuples as input. Polygon needs at least three coordinate-tuples:
 
@@ -278,5 +291,19 @@ Poly Bounding Box:  (-180.0, -90.0, 180.0, 90.0)
 Poly Exterior:  LINEARRING (-180 90, -180 -90, 180 -90, 180 90, -180 90)
 Poly Exterior Length:  1080.0
 ```
+
+## Next steps ..
+
+Now you know all of the basic geometrical objects that are used when doing GIS using vector data. 
+
+Next, you can **continue with the [Exercise 1]()** or read [Pro -tips materials]() where there is still some extra material concerning geometry collections and some useful functions that can be used when dealing with geometric objects in Python using Shapely -module. 
+
+# 5. Pro -tips (optional)
+
+This part is not obligatory but it contains some really useful information related to a slightly more complicated GIS-related functions and processes that can be done using Shapely -module. 
+
+## Geometry collections
+
+## Useful Shapely functions
 
 - We can also simplify our geometry (applies to line and polygon geometries which can be useful in some occasions using specific ([Douglas-Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm))
