@@ -21,7 +21,7 @@ and Geospatial Data Model.
   - [General overview of the latter part of the course](Lesson/Intro-Python-GIS.md#overview)
   - [What sort of tools are available for doing GIS in pure Python?](Lesson/Intro-Python-GIS.md#modules)
 - [Spatial Data Model / Geometric Objects](Lesson/Geometric-Objects.md)
-- [Exercise 1: Working with Geometric Objects]()
+- [Exercise 1: Working with Geometric Objects](https://classroom.github.com/assignment-invitations/c1252e0b9df12b27f1e39d557e918ae5)
 
 ## Resources
 
