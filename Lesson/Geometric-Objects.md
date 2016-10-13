@@ -3,18 +3,18 @@
 **Contents:**
 
 1. [Overview of geometric objects and Shapely -modules](#1-overview-of-geometric-objects-and-shapely--module)
-2. [Point](#2.-Point)
-  - [Creating a Point -object](#2)
-  - [Point attributes and functions](#2.1)
-3. [LineString (i.e. a line)](#3)
-  - [Creating a LineString -object](#3)
-  - [LineString attributes and functions](#3.1)
-4. [Polygon](#4)
-  - [Creating a Polygon -object](#4)
-  - [Polygon attributes and functions](#4.1)
-5. [Pro -tips](#5)
-  - [Geometry collections](#5.1)
-  - [Useful functions](#5.2)
+2. [Point](#2-point)
+  - [Creating a Point -object](#2-point)
+  - [Point attributes and functions](#point-attributes-and-functions)
+3. [LineString (i.e. a line)](#3-linestring)
+  - [Creating a LineString -object](#3-linestring)
+  - [LineString attributes and functions](#linestring-attributes-and-functions)
+4. [Polygon](#4-polygon)
+  - [Creating a Polygon -object](#4-polygon)
+  - [Polygon attributes and functions](#polygon-attributes-and-functions)
+5. [Pro -tips](#5-pro-tips)
+  - [Geometry collections](#geometry-collections)
+  - [Useful functions](#useful-functions)
 
 ## 1. Overview of geometric objects and Shapely -module  
 
@@ -43,7 +43,7 @@ There are many useful functionalities that you can do with Shapely such as:
   - **MultiLineString** -object represents a collection of lines and consists of a list of line-like sequences 
   - **MultiPolygon** -object represents a collection of polygons that consists of a list of polygon-like sequences that construct from exterior ring and (possible) hole list tuples 
 
-<a name="2"></a>## 2. Point 
+## 2. Point 
 
 - Creating point is easy, you pass x and y coordinates into Point() -object (+ possibly also z -coordinate) :
 
@@ -72,7 +72,7 @@ shapely.geometry.point.Point
 
 We can see that the type of the point is shapely's Point which is represented in a specific format that is based on [GEOS](https://trac.osgeo.org/geos/) C++ library that is one of the standard libraries in GIS. It runs under the hood e.g. in [Quantum GIS](http://www.qgis.org/en/site/). 3D-point can be recognized from the capital Z -letter in front of the coordinates. 
 
-<a name="2.1"></a>### Point attributes and functions 
+### Point attributes and functions 
 
 Point -object has some built-in attributes that can be accessed and also some useful functionalities. One of the most useful ones are the ability to extract the coordinates of a Point and calculate the Euclidian distance between points.
 
@@ -120,7 +120,7 @@ Okey, so we can see that the our xy variable contains a tuple where x and y are 
 Distance between the points is 29.72 decimal degrees
 ```
 
-<a name="3"></a>## 3. LineString 
+## 3. LineString 
 
 - Creating a LineString -object is fairly similar to how Point is created. Now instead using a single coordinate-tuple we can construct the line using either a list of shapely Point -objects or pass coordinate-tuples:
 
@@ -142,7 +142,7 @@ shapely.geometry.linestring.LineString
 
 Ok, now we can see that variable line constitutes of multiple coordinate-pairs and the type of the data is shapely LineString.
 
-<a name="3.1"></a>### LineString attributes and functions  
+### LineString attributes and functions  
 
 LineString -object has many useful built-in attributes and functionalities. It is for instance possible to extract the coordinates or the length of a LineString (line), calculate the centroid of the line, create points along the line at specific distance, calculate the closest distance from a line to specified Point and simplify the geometry. See full list of functionalities from [Shapely documentation](http://toblerity.org/shapely/manual.html#). Here, we go through a few of them.
 
@@ -193,7 +193,7 @@ shapely.geometry.point.Point
 
 Okey, so these are already fairly useful information for many different GIS tasks, and we didn't even calculate anything yet! These attributes are built-in in every LineString object that is created. Notice that the centroid that is returned is Point -object that has its own functions as was described earlier.
 
-<a name="4"></a>## 4. Polygon  
+## 4. Polygon  
 
 - Creating a Polygon -object continues the same logic of how Point and LineString were created but Polygon object only accepts coordinate-tuples as input. Polygon needs at least three coordinate-tuples:
 
@@ -261,7 +261,7 @@ shapely.geometry.polygon.Polygon
 
 Now we can see that the polygon has two different tuples of coordinates. The first one represents the outerior and the second one represents the hole inside of the Polygon.
 
-<a name="4.1"></a>### Polygon attributes and functions  
+### Polygon attributes and functions  
 
 - We can again access different attributes that are really useful such as area, centroid, bounding box, exterior, and exterior-length of the Polygon
 
@@ -299,12 +299,12 @@ Now you know all of the basic geometrical objects that are used when doing GIS u
 
 Next, you can **continue with the [Exercise 1]()** or read [Pro -tips materials]() where there is still some extra material concerning geometry collections and some useful functions that can be used when dealing with geometric objects in Python using Shapely -module. 
 
-<a name="5"></a># 5. Pro -tips (optional)  
+# 5. Pro -tips (optional)  
 
 This part is not obligatory but it contains some really useful information related to a slightly more complicated GIS-related functions and processes that can be done using Shapely -module. 
 
-<a name="5.1"></a>## Geometry collections  
+## Geometry collections  
 
-<a name="5.2"></a>## Useful Shapely functions  
+## Useful Shapely functions  
 
 - We can also simplify our geometry (applies to line and polygon geometries which can be useful in some occasions using specific ([Douglas-Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm))
