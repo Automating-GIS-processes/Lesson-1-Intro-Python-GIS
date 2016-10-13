@@ -14,7 +14,7 @@
   - [Polygon attributes and functions](#polygon-attributes-and-functions)
 5. [Pro -tips](#5-pro--tips-optional)
   - [Geometry collections](#geometry-collections)
-  - [Useful functions](#useful-functions)
+  - [Useful Shapely functions](#useful-shapely-functions)
 
 ## 1. Overview of geometric objects and Shapely -module  
 
