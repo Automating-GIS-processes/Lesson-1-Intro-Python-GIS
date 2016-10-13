@@ -2,8 +2,8 @@
 
 **Contents:**
 
-1. [Overview of geometric objects and Shapely -modules](#1)
-2. [Point](#2)
+1. [Overview of geometric objects and Shapely -modules](#1.-Overview-of-geometric-objects-and-Shapely--module)
+2. [Point](#2.-Point)
   - [Creating a Point -object](#2)
   - [Point attributes and functions](#2.1)
 3. [LineString (i.e. a line)](#3)
@@ -16,7 +16,7 @@
   - [Geometry collections](#5.1)
   - [Useful functions](#5.2)
 
-<a name="1"></a> ## 1. Overview of geometric objects and Shapely -module  
+## 1. Overview of geometric objects and Shapely -module  
 
 <img src="http://www.helsinki.fi/science/accessibility/maintenance/Kuvia/SpatialDataModel.PNG">
 *Fundamental geometric objects that can be used in Python with <a href="http://toblerity.org/shapely/manual.html"><strong>Shapely</strong></a> module*
