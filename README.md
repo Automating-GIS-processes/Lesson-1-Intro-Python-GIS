@@ -23,8 +23,8 @@ and Geospatial Data Model.
 - [Spatial Data Model / Geometric Objects](Lesson/Geometric-Objects.md)
   - [Point](Lesson/Geometric-Objects.md#2-point)
   - [LineString](Lesson/Geometric-Objects.md#3-linestring)
-  - [Polygon](Lesson/Geometric-Objects.md#4-point)
-  - [Pro -tips](Lesson/Geometric-Objects.md#5-pro--tips-(optional))
+  - [Polygon](Lesson/Geometric-Objects.md#4-polygon)
+  - [Pro -tips](Lesson/Geometric-Objects.md#5-pro--tips-optional)
 - [Exercise 1: Working with Geometric Objects](https://classroom.github.com/assignment-invitations/c1252e0b9df12b27f1e39d557e918ae5)
 
 ## Resources
