@@ -2,7 +2,7 @@
 
 **Contents:**
 
-1. [Overview of geometric objects and Shapely -modules](#1.-Overview-of-geometric-objects-and-Shapely--module)
+1. [Overview of geometric objects and Shapely -modules](#1.Overview-of-geometric-objects-and-Shapely--module)
 2. [Point](#2.-Point)
   - [Creating a Point -object](#2)
   - [Point attributes and functions](#2.1)
