@@ -5,7 +5,7 @@ anaconda-cloud: {}
 # Geometric Objects - Spatial Data Model
 
 <img src="http://www.helsinki.fi/science/accessibility/maintenance/Kuvia/SpatialDataModel.PNG">
-*Fundamental geometric objects that can be used in Python with __<a href="http://toblerity.org/shapely/manual.html">Shapely</a> __ module*
+*Fundamental geometric objects that can be used in Python with <a href="http://toblerity.org/shapely/manual.html"><strong>Shapely</strong></a>module*
 
 
 The most fundamental geometric objects are **Points**, **Lines** and **Polygons** which are the basic ingredients when working with spatial data in vector format. 
