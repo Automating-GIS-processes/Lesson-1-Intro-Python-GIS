@@ -12,7 +12,7 @@
 4. [Polygon](#4-polygon)
   - [Creating a Polygon -object](#4-polygon)
   - [Polygon attributes and functions](#polygon-attributes-and-functions)
-5. [Pro -tips](#5-pro-tips-(optional))
+5. [Pro -tips](#5-pro--tips-optional)
   - [Geometry collections](#geometry-collections)
   - [Useful functions](#useful-functions)
 
