@@ -35,6 +35,7 @@ and Geospatial Data Model.
   - [Writing script files](https://github.com/Python-for-geo-people/Diving-into-Python/tree/master/Lesson/writing-scripts.md)
   - [Working on the exercises](https://github.com/Python-for-geo-people/Diving-into-Python/tree/master/Lesson/working-on-assignment.md)
 - Web pages
+  - [Shapely documentation](http://toblerity.org/shapely/manual.html)
   - [Codecademy's Learn to program in Python](https://www.codecademy.com/learn/python)
   - [Software Carpentry's programming in Python](https://swcarpentry.github.io/python-novice-inflammation/)
 - Books
