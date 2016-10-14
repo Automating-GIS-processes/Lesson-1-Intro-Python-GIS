@@ -107,7 +107,7 @@ Ok, we can see that the output is a Shapely CoordinateSequence. Let's see how we
 ```
  - What is inside?
  
- ```
+ ```python
  >>> print(xy)
  (array('d', [2.2]), array('d', [4.2]))
  
