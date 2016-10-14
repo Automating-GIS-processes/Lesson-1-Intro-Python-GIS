@@ -17,7 +17,7 @@
 
 ### Sources
 
-These materials are partly based on [Shapely -documentation](http://toblerity.org/shapely/manual.html) and to Lawhead 
+These materials are partly based on [Shapely -documentation](http://toblerity.org/shapely/manual.html) and [Westra E. (2013), Chapter 3](https://www.packtpub.com/application-development/python-geospatial-development-second-edition). 
   
 ## 1. Overview of geometric objects and Shapely -module
 
