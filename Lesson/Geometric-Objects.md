@@ -349,7 +349,8 @@ Now we can see that the polygon has two different tuples of coordinates. The fir
 
 Now you know all of the basic geometrical objects that are used when doing GIS using vector data.
 
-Next, you can **continue with the [Exercise 1]()** or read [Pro -tips materials]() where there is still some extra material concerning geometry collections and some useful attributes that can be used when dealing with geometric objects in Python using Shapely -module.
+Next, you can **continue with the [Exercise 1](https://classroom.github.com/assignment-invitations/c1252e0b9df12b27f1e39d557e918ae5)** or read [Pro -tips materials](#5-pro--tips-optional) 
+where there is still some extra material concerning geometry collections and some useful attributes that can be used when dealing with geometric objects in Python using Shapely -module.
 
 # 5. Pro -tips (optional)
 
