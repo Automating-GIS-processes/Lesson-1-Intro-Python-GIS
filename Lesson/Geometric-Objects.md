@@ -68,8 +68,10 @@ There are many useful functionalities that you can do with Shapely such as:
  ```python
  >>> print(point1)
  POINT (2.2 4.2)
+ 
  >>> print(point3D)
  POINT Z (9.26 -2.456 0.57)
+ 
  >>> print(point_type)
  shapely.geometry.point.Point
 ```
@@ -108,8 +110,10 @@ Ok, we can see that the output is a Shapely CoordinateSequence. Let's see how we
  ```
  >>> print(xy)
  (array('d', [2.2]), array('d', [4.2]))
+ 
  >>> print(x)
  2.2
+ 
  >>> print(y)
  4.2
  ```
@@ -142,8 +146,10 @@ Okey, so we can see that the our xy variable contains a tuple where x and y are 
  ```python
  >>> print(line)
  LINESTRING (2.2 4.2, 7.2 -25.1, 9.26 -2.456)
+ 
  >>> print(line2)
  LINESTRING (2.2 4.2, 7.2 -25.1, 9.26 -2.456)
+ 
  >>> type(line)
  shapely.geometry.linestring.LineString
 ```
@@ -177,6 +183,7 @@ Okey, we can see that the coordinates are again stored as a numpy arrays where f
 
  >>> print(line_x)
  array('d', [2.2, 7.2, 9.26])
+ 
  >>> print(line_y)
  array('d', [4.2, -25.1, -2.456])
 ```
@@ -197,8 +204,10 @@ Okey, we can see that the coordinates are again stored as a numpy arrays where f
 ```python
  >>> print("Length of our line: {0:.2f}".format(l_length))
  Length of our line: 52.46
+ 
  >>> print("Centroid of our line: ", l_centroid)
  Centroid of our line:  POINT (6.229961354035622 -11.89241115757239)
+ 
  >>> print("Type of the centroid:", centroid_type)
  shapely.geometry.point.Point
 ```
@@ -231,10 +240,13 @@ that has its own functions as was described earlier.
 ```python
  >>> print(poly)
  POLYGON ((2.2 4.2, 7.2 -25.1, 9.26 -2.456, 2.2 4.2))
+ 
  >>> print(poly2)
  POLYGON ((2.2 4.2, 7.2 -25.1, 9.26 -2.456, 2.2 4.2))
+ 
  >>> print("Geometry type as text:", poly_type)
  Geometry type as text: Polygon
+ 
  >>> print("Geometry how Python shows it:", poly_type2")
  shapely.geometry.polygon.Polygon
 ```
@@ -283,8 +295,10 @@ a Polygon can be constructed using exterior coordinates and interior coordinates
 ```python
  >>> print(world)
  POLYGON ((-180 90, -180 -90, 180 -90, 180 90, -180 90))
+ 
  >>> print(world_has_a_hole)
  POLYGON ((-180 90, -180 -90, 180 -90, 180 90, -180 90), (-170 80, -170 -80, 170 -80, 170 80, -170 80))
+ 
  >>> type(world_has_a_hole)
  shapely.geometry.polygon.Polygon
 ```
@@ -317,12 +331,16 @@ Now we can see that the polygon has two different tuples of coordinates. The fir
 ```python
  >>> print("Poly centroid: ", world_centroid)
  Poly centroid:  POINT (-0 -0)
+ 
  >>> print("Poly Area: ", world_area)
  Poly Area:  64800.0
+ 
  >>> print("Poly Bounding Box: ", world_bbox)
  Poly Bounding Box:  (-180.0, -90.0, 180.0, 90.0)
+ 
  >>> print("Poly Exterior: ", world_ext)
  Poly Exterior:  LINEARRING (-180 90, -180 -90, 180 -90, 180 90, -180 90)
+ 
  >>> print("Poly Exterior Length: ", world_ext_length)
  Poly Exterior Length:  1080.0
 ```
@@ -369,7 +387,8 @@ e.g. around your data points is a really useful function for many purposes (e.g.
  # Let's create the exterior of the western part of the world
  west_exterior = [(-180, 90), (-180, -90), (0, -90), (0, 90)]
 
- # Let's create a hole --> remember there can be multiple holes, thus we need to have a list of hole(s). Here we have just one.
+ # Let's create a hole --> remember there can be multiple holes, thus we need to have a list of hole(s). 
+ # Here we have just one.
  west_hole = [[(-170, 80), (-170, -80), (-10, -80), (-10, 80)]]
 
  # Create the Polygon
@@ -395,6 +414,7 @@ e.g. around your data points is a really useful function for many purposes (e.g.
  
  >>> print("MultiLine: ", multi_line)
  MultiLine:  MULTILINESTRING ((2.2 4.2, 7.2 -25.1), (7.2 -25.1, 9.26 -2.456))
+ 
  >>> print("Bounding box: ", east_poly_box)
  Bounding box:  POLYGON ((180 -90, 180 90, 0 90, 0 -90, 180 -90))
  
