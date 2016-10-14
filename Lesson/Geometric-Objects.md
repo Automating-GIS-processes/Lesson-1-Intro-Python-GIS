@@ -402,9 +402,10 @@ We can see that the outputs are similar to the basic geometric objects that we c
  # a valid polygon. This can be really useful information when trying to find topological errors from your data
  valid = multi_poly.is_valid
 ```
-
+ 
+ - Let's see what do we have:
+ 
 ```python
- # Let's see what do we have:
  >>> print("Convex hull of the points: ", convex)
  Convex hull of the points:  POLYGON ((7.2 -25.1, 2.2 4.2, 9.26 -2.456, 7.2 -25.1))
 
