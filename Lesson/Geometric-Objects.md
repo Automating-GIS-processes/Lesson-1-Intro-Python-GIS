@@ -14,6 +14,10 @@
   - [Polygon attributes and functions](#polygon-attributes-and-functions)
 5. [Pro -tips](#5-pro--tips-optional)
   - [Geometry collections](#geometry-collections)
+
+### Sources
+
+These materials are partly based on [Shapely -documentation](http://toblerity.org/shapely/manual.html) and to Lawhead 
   
 ## 1. Overview of geometric objects and Shapely -module
 
@@ -224,6 +228,7 @@ Notice that Polygon has double parentheses around the coordinates. This is becau
 ```python
 
 
+
  Help on Polygon in module shapely.geometry.polygon object:
  class Polygon(shapely.geometry.base.BaseGeometry)
   |  A two-dimensional figure bounded by a linear ring
@@ -308,17 +313,17 @@ Next, you can **continue with the [Exercise 1]()** or read [Pro -tips materials]
 
 # 5. Pro -tips (optional)
 
-This part is not obligatory but it contains some useful information related to construction and usage of geometry collections.
+This part is not obligatory but it contains some useful information related to construction and usage of geometry collections and some special geometric objects -such as bounding box.
 
 ## Geometry collections
 
-In some occassions it is useful to store e.g. multiple lines or polygons under a single feature (i.e. a single row in a Shapefile represents more than one line or polygon object). Collections of points are implemented by using a MultiPoint -object, collections of curves by using a MultiLineString -object, and collections of surfaces by a MultiPolygon -object. These collections aren’t computationally significant, but are useful for modeling certain kinds of features. A Y-shaped line feature (such as road), or multiple polygons (e.g. islands on a like), can be presented nicely as a whole by a using MultiLineString or MultiPolygon accordingly.
+In some occassions it is useful to store e.g. multiple lines or polygons under a single feature (i.e. a single row in a Shapefile represents more than one line or polygon object). Collections of points are implemented by using a MultiPoint -object, collections of curves by using a MultiLineString -object, and collections of surfaces by a MultiPolygon -object. These collections arenâ€™t computationally significant, but are useful for modeling certain kinds of features. A Y-shaped line feature (such as road), or multiple polygons (e.g. islands on a like), can be presented nicely as a whole by a using MultiLineString or MultiPolygon accordingly.
 
 - Geometry collections can be constructed in a following manner:
 
 ```python
->>> # Import collections of geometric objects
-... from shapely.geometry import MultiPoint, MultiLineString, MultiPolygon
+>>> # Import collections of geometric objects + bounding box
+... from shapely.geometry import MultiPoint, MultiLineString, MultiPolygon, box
 ...
 >>> # Create a MultiPoint object of our points 1,2 and 3
 ... multi_point = MultiPoint([point1, point2, point3])
@@ -341,26 +346,32 @@ In some occassions it is useful to store e.g. multiple lines or polygons under a
 >>> # Let's create a hole --> remember there can be multiple holes, thus we need to have a list of hole(s). Here we have just one.
 ... west_hole = [[(-170, 80), (-170, -80), (-10, -80), (-10, 80)]]
 ...
->>> # Exterior of our Eastern world polygon
-... east_exterior = [(0, 90), (0, -90), (180, -90), (180, 90)]
-...
->>> # Create Polygons
+>>> # Create the Polygon
 ... west_poly = Polygon(shell=west_exterior, holes=west_hole)
->>> east_poly = Polygon(shell=east_exterior)
+...
+>>> # Let's create the Polygon of our Eastern hemisphere polygon using bounding box
+... # For bounding box we need to specify the lower-left corner coordinates and upper-right coordinates
+... min_x, min_y = 0, -90
+>>> max_x, max_y = 180, 90
+...
+>>> # Create the polygon using box() function
+... east_poly_box = box(minx=min_x, miny=min_y, maxx=max_x, maxy=max_y)
 ...
 >>> # Let's create our MultiPolygon. We can pass multiple Polygon -objects into our MultiPolygon as a list
-... multi_poly = MultiPolygon([west_poly, east_poly])
+... multi_poly = MultiPolygon([west_poly, east_poly_box])
 ...
 >>> # Let's see what do we have
 ... print("MultiPoint:", multi_point)
 >>> print("MultiLine: ", multi_line)
+>>> print("Bounding box: ", east_poly_box)
 >>> print("MultiPoly: ", multi_poly)
 MultiPoint: MULTIPOINT (2.2 4.2, 7.2 -25.1, 9.26 -2.456)
 MultiLine:  MULTILINESTRING ((2.2 4.2, 7.2 -25.1), (7.2 -25.1, 9.26 -2.456))
-MultiPoly:  MULTIPOLYGON (((-180 90, -180 -90, 0 -90, 0 90, -180 90), (-170 80, -170 -80, -10 -80, -10 80, -170 80)), ((0 90, 0 -90, 180 -90, 180 90, 0 90)))
+Bounding box:  POLYGON ((180 -90, 180 90, 0 90, 0 -90, 180 -90))
+MultiPoly:  MULTIPOLYGON (((-180 90, -180 -90, 0 -90, 0 90, -180 90), (-170 80, -170 -80, -10 -80, -10 80, -170 80)), ((180 -90, 180 90, 0 90, 0 -90, 180 -90)))
 ```
 
-We can see that the outputs are similar to the basic geometric objects that we created previously but now these objects contain multiple features of those points, lines or polygons. 
+We can see that the outputs are similar to the basic geometric objects that we created previously but now these objects contain multiple features of those points, lines or polygons.
 
 ### Geometry collection -objects' attributes and functions
 
@@ -400,5 +411,6 @@ Area of our MultiPolygon: 39200.0
 Area of our Western Hemisphere polygon: 6800.0
 Is polygon valid?:  False
 ```
+
 From the above we can see that MultiPolygons have exactly the same attributes available as single geometric objects but now the information such as area calculates the area of 
-ALL of the individual -objects combined. There are also some extra features available such as *is_valid* attribute that tells if the polygons or lines intersect with each other.  
+ALL of the individual -objects combined. There are also some extra features available such as *is_valid* attribute that tells if the polygons or lines intersect with each other.
