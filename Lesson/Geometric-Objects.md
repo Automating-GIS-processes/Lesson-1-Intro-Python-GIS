@@ -13,7 +13,7 @@
   - [Creating a Polygon -object](#4-polygon)
   - [Polygon attributes and functions](#polygon-attributes-and-functions)
 5. [Pro -tips](#5-pro--tips-optional)
-  - [Geometry collections](#geometry-collections)
+  - [Geometry collections and minimum bounding box](#geometry-collections)
 
 ### Sources
 
@@ -317,7 +317,11 @@ This part is not obligatory but it contains some useful information related to c
 
 ## Geometry collections
 
-In some occassions it is useful to store e.g. multiple lines or polygons under a single feature (i.e. a single row in a Shapefile represents more than one line or polygon object). Collections of points are implemented by using a MultiPoint -object, collections of curves by using a MultiLineString -object, and collections of surfaces by a MultiPolygon -object. These collections arenâ€™t computationally significant, but are useful for modeling certain kinds of features. A Y-shaped line feature (such as road), or multiple polygons (e.g. islands on a like), can be presented nicely as a whole by a using MultiLineString or MultiPolygon accordingly.
+In some occassions it is useful to store e.g. multiple lines or polygons under a single feature (i.e. a single row in a Shapefile represents more than one line or polygon object). 
+Collections of points are implemented by using a MultiPoint -object, collections of curves by using a MultiLineString -object, and collections of surfaces by a MultiPolygon -object. 
+These collections are not computationally significant, but are useful for modeling certain kinds of features. A Y-shaped line feature (such as road), or multiple polygons 
+(e.g. islands on a like), can be presented nicely as a whole by a using MultiLineString or MultiPolygon accordingly. Creating and visualizing a minimum [bounding box](https://en.wikipedia.org/wiki/Minimum_bounding_box) 
+e.g. around your data points is a really useful function for many purposes (e.g. trying to understand the extent of your data), here we demonstrate how to create one using Shapely. 
 
 - Geometry collections can be constructed in a following manner:
 
