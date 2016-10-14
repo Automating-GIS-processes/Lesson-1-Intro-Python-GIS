@@ -397,11 +397,13 @@ We can see that the outputs are similar to the basic geometric objects that we c
  # Let's calculate the area of our Western hemisphere (with a hole) which is at index 0
  west_area = multi_poly[0].area
 
- # We can check if we have a "valid" MultiPolygon. MultiPolygon is thought as valid if the individual polygons does not
- # intersect with each other. Here, because the polygons have a common 0-meridian, we should NOT have a valid polygon
- # This can be really useful information when trying to find topological errors from your data
+ # We can check if we have a "valid" MultiPolygon. MultiPolygon is thought as valid if the individual polygons 
+ # does notintersect with each other. Here, because the polygons have a common 0-meridian, we should NOT have 
+ # a valid polygon. This can be really useful information when trying to find topological errors from your data
  valid = multi_poly.is_valid
+```
 
+```
  # Let's see what do we have:
  >>> print("Convex hull of the points: ", convex)
  Convex hull of the points:  POLYGON ((7.2 -25.1, 2.2 4.2, 9.26 -2.456, 7.2 -25.1))
