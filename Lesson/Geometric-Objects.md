@@ -51,23 +51,23 @@ There are many useful functionalities that you can do with Shapely such as:
 - Creating point is easy, you pass x and y coordinates into Point() -object (+ possibly also z -coordinate) :
 
 ```python
->>> # Import necessary geometric objects from shapely module
-... from shapely.geometry import Point, LineString, Polygon
-...
->>> # Create Point geometric object(s) with coordinates
-... point1 = Point(2.2, 4.2)
->>> point2 = Point(7.2, -25.1)
->>> point3 = Point(9.26, -2.456)
->>> point3D = Point(9.26, -2.456, 0.57)
-...
->>> # Let's see what the variables look like
-... print(point1)
->>> print(point3D)
-...
->>> # What is the type of the point?
-... type(point1)
-...
->>> # Outputs:
+ # Import necessary geometric objects from shapely module
+ from shapely.geometry import Point, LineString, Polygon
+
+ # Create Point geometric object(s) with coordinates
+ point1 = Point(2.2, 4.2)
+ point2 = Point(7.2, -25.1)
+ point3 = Point(9.26, -2.456)
+ point3D = Point(9.26, -2.456, 0.57)
+
+ # Let's see what the variables look like
+ print(point1)
+ print(point3D)
+
+ # What is the type of the point?
+ type(point1)
+
+ 
 POINT (2.2 4.2)
 POINT Z (9.26 -2.456 0.57)
 shapely.geometry.point.Point
@@ -82,30 +82,30 @@ Point -object has some built-in attributes that can be accessed and also some us
 - Extracting the coordinates of a Point can be done in a couple of different ways
 
 ```python
->>> # Get the coordinates
-... point_coords = point1.coords
-...
->>> # What is the type of this?
-... type(point_coords)
+ # Get the coordinates
+ point_coords = point1.coords
+
+ # What is the type of this?
+ type(point_coords)
 shapely.coords.CoordinateSequence
 ```
 
 Ok, we can see that the output is a Shapely CoordinateSequence. Let's see how we can get out the actual coordinates:
 
 ```python
->>> # Get x and y coordinates
-... xy = point_coords.xy
-...
->>> # Get only x coordinates of Point1
-... x = point1.x
-...
->>> # Whatabout y coordinate?
-... y = point1.y
-...
->>> # What is inside?
-... print(xy)
->>> print(x)
->>> print(y)
+ # Get x and y coordinates
+ xy = point_coords.xy
+
+ # Get only x coordinates of Point1
+ x = point1.x
+
+ # Whatabout y coordinate?
+ y = point1.y
+
+ # What is inside?
+ print(xy)
+ print(x)
+ print(y)
 (array('d', [2.2]), array('d', [4.2]))
 2.2
 4.2
@@ -117,9 +117,9 @@ Okey, so we can see that the our xy variable contains a tuple where x and y are 
   - the returned distance is based on the projection of the points (degrees in WGS84, meters in UTM)
 
 ```python
->>> # Calculate the distance between point1 and point2
-... point_dist = point1.distance(point2)
->>> print("Distance between the points is {0:.2f} decimal degrees".format(point_dist))
+ # Calculate the distance between point1 and point2
+ point_dist = point1.distance(point2)
+ print("Distance between the points is {0:.2f} decimal degrees".format(point_dist))
 Distance between the points is 29.72 decimal degrees
 ```
 
@@ -128,16 +128,16 @@ Distance between the points is 29.72 decimal degrees
 - Creating a LineString -object is fairly similar to how Point is created. Now instead using a single coordinate-tuple we can construct the line using either a list of shapely Point -objects or pass coordinate-tuples:
 
 ```python
->>> # Create a LineString from our Point objects
-... line = LineString([point1, point2, point3])
-...
->>> # It is also possible to use coordinate tuples having the same outcome
-... line2 = LineString([(2.2, 4.2), (7.2, -25.1), (9.26, -2.456)])
-...
->>> # Let's see how our LineString looks like
-... print(line)
->>> print(line2)
->>> type(line)
+ # Create a LineString from our Point objects
+ line = LineString([point1, point2, point3])
+
+ # It is also possible to use coordinate tuples having the same outcome
+ line2 = LineString([(2.2, 4.2), (7.2, -25.1), (9.26, -2.456)])
+
+ # Let's see how our LineString looks like
+ print(line)
+ print(line2)
+ type(line)
 LINESTRING (2.2 4.2, 7.2 -25.1, 9.26 -2.456)
 LINESTRING (2.2 4.2, 7.2 -25.1, 9.26 -2.456)
 shapely.geometry.linestring.LineString
@@ -152,9 +152,9 @@ LineString -object has many useful built-in attributes and functionalities. It i
 - We can extract the coordinates of a LineString similarly as with Point
 
 ```python
->>> # Get x and y coordinates of the line
-... lxy = line.xy
->>> print(lxy)
+ # Get x and y coordinates of the line
+ lxy = line.xy
+ print(lxy)
 (array('d', [2.2, 7.2, 9.26]), array('d', [4.2, -25.1, -2.456]))
 ```
 
@@ -163,14 +163,14 @@ Okey, we can see that the coordinates are again stored as a numpy arrays where f
 - We can extract only x or y coordinates by referring to those arrays as follows
 
 ```python
->>> # Extract x coordinates
-... line_x = lxy[0]
-...
->>> # Extract y coordinates straight from the LineObject by referring to a array at index 1
-... line_y = line.xy[1]
-...
->>> print(line_x)
->>> print(line_y)
+ # Extract x coordinates
+ line_x = lxy[0]
+
+ # Extract y coordinates straight from the LineObject by referring to a array at index 1
+ line_y = line.xy[1]
+
+ print(line_x)
+ print(line_y)
 array('d', [2.2, 7.2, 9.26])
 array('d', [4.2, -25.1, -2.456])
 ```
@@ -178,17 +178,17 @@ array('d', [4.2, -25.1, -2.456])
 - We can get specific attributes such as lenght of the line and center of the line (centroid) straight from the LineString object itself
 
 ```python
->>> # Get the lenght of the line
-... l_length = line.length
-...
->>> # Get the centroid of the line
-... l_centroid = line.centroid
-...
->>> print("Length of our line: {0:.2f}".format(l_length))
->>> print("Centroid of our line: ", l_centroid)
-...
->>> # What type is the centroid?
-... type(l_centroid)
+ # Get the lenght of the line
+ l_length = line.length
+
+ # Get the centroid of the line
+ l_centroid = line.centroid
+
+ print("Length of our line: {0:.2f}".format(l_length))
+ print("Centroid of our line: ", l_centroid)
+
+ # What type is the centroid?
+ type(l_centroid)
 Length of our line: 52.46
 Centroid of our line:  POINT (6.229961354035622 -11.89241115757239)
 shapely.geometry.point.Point
@@ -201,22 +201,22 @@ Okey, so these are already fairly useful information for many different GIS task
 - Creating a Polygon -object continues the same logic of how Point and LineString were created but Polygon object only accepts coordinate-tuples as input. Polygon needs at least three coordinate-tuples:
 
 ```python
->>> # Create a Polygon from the coordinates
-... poly = Polygon([(2.2, 4.2), (7.2, -25.1), (9.26, -2.456)])
-...
->>> # We can also use our previously created Point objects (same outcome)
-... # --> notice that Polygon object requires x,y coordinates as input
-... poly2 = Polygon([[p.x, p.y] for p in [point1, point2, point3]])
-...
->>> # Let's see how our Polygon looks like
-... print(poly)
->>> print(poly2)
-...
->>> # Geometry type can accessed also as String
-... print("Geometry type as text:",poly.geom_type)
-...
->>> # Using the type gives the type in a different format
-... type(poly)
+ # Create a Polygon from the coordinates
+ poly = Polygon([(2.2, 4.2), (7.2, -25.1), (9.26, -2.456)])
+
+ # We can also use our previously created Point objects (same outcome)
+ # --> notice that Polygon object requires x,y coordinates as input
+ poly2 = Polygon([[p.x, p.y] for p in [point1, point2, point3]])
+
+ # Let's see how our Polygon looks like
+ print(poly)
+ print(poly2)
+
+ # Geometry type can accessed also as String
+ print("Geometry type as text:",poly.geom_type)
+
+ # Using the type gives the type in a different format
+ type(poly)
 POLYGON ((2.2 4.2, 7.2 -25.1, 9.26 -2.456, 2.2 4.2))
 POLYGON ((2.2 4.2, 7.2 -25.1, 9.26 -2.456, 2.2 4.2))
 Geometry type as text: Polygon
@@ -248,24 +248,24 @@ Notice that Polygon has double parentheses around the coordinates. This is becau
 - Let's create a Polygon with a hole inside
 
 ```python
->>> # Let's create a bounding box of the world and make a whole in it
-...
-... # First we define our exterior
-... world_exterior = [(-180, 90), (-180, -90), (180, -90), (180, 90)]
-...
->>> # Let's create a single big hole where we leave ten decimal degrees at the boundaries of the world
-... # Notice: there could be multiple holes, thus we need to provide a list of holes
-... hole = [[(-170, 80), (-170, -80), (170, -80), (170, 80)]]
-...
->>> # World without a hole
-... world = Polygon(shell=world_exterior)
-...
->>> # Now we can construct our Polygon with the hole inside
-... world_has_a_hole = Polygon(shell=world_exterior, holes=hole)
-...
->>> print(world)
->>> print(world_has_a_hole)
->>> type(world_has_a_hole)
+ # Let's create a bounding box of the world and make a whole in it
+
+ # First we define our exterior
+ world_exterior = [(-180, 90), (-180, -90), (180, -90), (180, 90)]
+
+ # Let's create a single big hole where we leave ten decimal degrees at the boundaries of the world
+ # Notice: there could be multiple holes, thus we need to provide a list of holes
+ hole = [[(-170, 80), (-170, -80), (170, -80), (170, 80)]]
+
+ # World without a hole
+ world = Polygon(shell=world_exterior)
+
+ # Now we can construct our Polygon with the hole inside
+ world_has_a_hole = Polygon(shell=world_exterior, holes=hole)
+
+ print(world)
+ print(world_has_a_hole)
+ type(world_has_a_hole)
 POLYGON ((-180 90, -180 -90, 180 -90, 180 90, -180 90))
 POLYGON ((-180 90, -180 -90, 180 -90, 180 90, -180 90), (-170 80, -170 -80, 170 -80, 170 80, -170 80))
 shapely.geometry.polygon.Polygon
@@ -278,26 +278,26 @@ Now we can see that the polygon has two different tuples of coordinates. The fir
 - We can again access different attributes that are really useful such as area, centroid, bounding box, exterior, and exterior-length of the Polygon
 
 ```python
->>> # Get the centroid of the Polygon
-... world_centroid = world.centroid
-...
->>> # Get the area of the Polygon
-... world_area = world.area
-...
->>> # Get the bounds of the Polygon (i.e. bounding box)
-... world_bbox = world.bounds
-...
->>> # Get the exterior of the Polygon
-... world_ext = world.exterior
-...
->>> # Get the length of the exterior
-... world_ext_length = world_ext.length
-...
->>> print("Poly centroid: ", world_centroid)
->>> print("Poly Area: ", world_area)
->>> print("Poly Bounding Box: ", world_bbox)
->>> print("Poly Exterior: ", world_ext)
->>> print("Poly Exterior Length: ", world_ext_length)
+ # Get the centroid of the Polygon
+ world_centroid = world.centroid
+
+ # Get the area of the Polygon
+ world_area = world.area
+
+ # Get the bounds of the Polygon (i.e. bounding box)
+ world_bbox = world.bounds
+
+ # Get the exterior of the Polygon
+ world_ext = world.exterior
+
+ # Get the length of the exterior
+ world_ext_length = world_ext.length
+
+ print("Poly centroid: ", world_centroid)
+ print("Poly Area: ", world_area)
+ print("Poly Bounding Box: ", world_bbox)
+ print("Poly Exterior: ", world_ext)
+ print("Poly Exterior Length: ", world_ext_length)
 Poly centroid:  POINT (-0 -0)
 Poly Area:  64800.0
 Poly Bounding Box:  (-180.0, -90.0, 180.0, 90.0)
@@ -326,49 +326,49 @@ e.g. around your data points is a really useful function for many purposes (e.g.
 - Geometry collections can be constructed in a following manner:
 
 ```python
->>> # Import collections of geometric objects + bounding box
-... from shapely.geometry import MultiPoint, MultiLineString, MultiPolygon, box
-...
->>> # Create a MultiPoint object of our points 1,2 and 3
-... multi_point = MultiPoint([point1, point2, point3])
-...
->>> # It is also possible to pass coordinate tuples inside
-... multi_point2 = MultiPoint([(2.2, 4.2), (7.2, -25.1), (9.26, -2.456)])
-...
->>> # We can also create a MultiLineString with two lines
-... line1 = LineString([point1, point2])
->>> line2 = LineString([point2, point3])
->>> multi_line = MultiLineString([line1, line2])
-...
->>> # MultiPolygon can be done in a similar manner
-... # Let's divide our world into western and eastern hemispheres with a hole on the western hemisphere
-... # --------------------------------------------------------------------------------------------------
-...
-... # Let's create the exterior of the western part of the world
-... west_exterior = [(-180, 90), (-180, -90), (0, -90), (0, 90)]
-...
->>> # Let's create a hole --> remember there can be multiple holes, thus we need to have a list of hole(s). Here we have just one.
-... west_hole = [[(-170, 80), (-170, -80), (-10, -80), (-10, 80)]]
-...
->>> # Create the Polygon
-... west_poly = Polygon(shell=west_exterior, holes=west_hole)
-...
->>> # Let's create the Polygon of our Eastern hemisphere polygon using bounding box
-... # For bounding box we need to specify the lower-left corner coordinates and upper-right coordinates
-... min_x, min_y = 0, -90
->>> max_x, max_y = 180, 90
-...
->>> # Create the polygon using box() function
-... east_poly_box = box(minx=min_x, miny=min_y, maxx=max_x, maxy=max_y)
-...
->>> # Let's create our MultiPolygon. We can pass multiple Polygon -objects into our MultiPolygon as a list
-... multi_poly = MultiPolygon([west_poly, east_poly_box])
-...
->>> # Let's see what do we have
-... print("MultiPoint:", multi_point)
->>> print("MultiLine: ", multi_line)
->>> print("Bounding box: ", east_poly_box)
->>> print("MultiPoly: ", multi_poly)
+ # Import collections of geometric objects + bounding box
+ from shapely.geometry import MultiPoint, MultiLineString, MultiPolygon, box
+
+ # Create a MultiPoint object of our points 1,2 and 3
+ multi_point = MultiPoint([point1, point2, point3])
+
+ # It is also possible to pass coordinate tuples inside
+ multi_point2 = MultiPoint([(2.2, 4.2), (7.2, -25.1), (9.26, -2.456)])
+
+ # We can also create a MultiLineString with two lines
+ line1 = LineString([point1, point2])
+ line2 = LineString([point2, point3])
+ multi_line = MultiLineString([line1, line2])
+
+ # MultiPolygon can be done in a similar manner
+ # Let's divide our world into western and eastern hemispheres with a hole on the western hemisphere
+ # --------------------------------------------------------------------------------------------------
+
+ # Let's create the exterior of the western part of the world
+ west_exterior = [(-180, 90), (-180, -90), (0, -90), (0, 90)]
+
+ # Let's create a hole --> remember there can be multiple holes, thus we need to have a list of hole(s). Here we have just one.
+ west_hole = [[(-170, 80), (-170, -80), (-10, -80), (-10, 80)]]
+
+ # Create the Polygon
+ west_poly = Polygon(shell=west_exterior, holes=west_hole)
+
+ # Let's create the Polygon of our Eastern hemisphere polygon using bounding box
+ # For bounding box we need to specify the lower-left corner coordinates and upper-right coordinates
+ min_x, min_y = 0, -90
+ max_x, max_y = 180, 90
+
+ # Create the polygon using box() function
+ east_poly_box = box(minx=min_x, miny=min_y, maxx=max_x, maxy=max_y)
+
+ # Let's create our MultiPolygon. We can pass multiple Polygon -objects into our MultiPolygon as a list
+ multi_poly = MultiPolygon([west_poly, east_poly_box])
+
+ # Let's see what do we have
+ print("MultiPoint:", multi_point)
+ print("MultiLine: ", multi_line)
+ print("Bounding box: ", east_poly_box)
+ print("MultiPoly: ", multi_poly)
 MultiPoint: MULTIPOINT (2.2 4.2, 7.2 -25.1, 9.26 -2.456)
 MultiLine:  MULTILINESTRING ((2.2 4.2, 7.2 -25.1), (7.2 -25.1, 9.26 -2.456))
 Bounding box:  POLYGON ((180 -90, 180 90, 0 90, 0 -90, 180 -90))
@@ -382,38 +382,42 @@ We can see that the outputs are similar to the basic geometric objects that we c
 - We can also get many useful attributes from those objects:
 
 ```python
->>> # Convex Hull of our MultiPoint --> https://en.wikipedia.org/wiki/Convex_hull
-... convex = multi_point.convex_hull
-...
->>> # How many lines do we have inside our MultiLineString?
-... lines_count = len(multi_line)
-...
->>> # Let's calculate the area of our MultiPolygon
-... multi_poly_area = multi_poly.area
-...
->>> # We can also access different items inside our geometry collections. We can e.g. access a single polygon from
-... # our MultiPolygon -object by referring to the index
-...
-... # Let's calculate the area of our Western hemisphere (with a hole) which is at index 0
-... west_area = multi_poly[0].area
-...
->>> # We can check if we have a "valid" MultiPolygon. MultiPolygon is thought as valid if the individual polygons does not
-... # intersect with each other. Here, because the polygons have a common 0-meridian, we should NOT have a valid polygon
-... # This can be really useful information when trying to find topological errors from your data
-... valid = multi_poly.is_valid
-...
->>> # Let's see what do we have
-... print("Convex hull of the points: ", convex)
->>> print("Number of lines in MultiLineString:", lines_count)
->>> print("Area of our MultiPolygon:", multi_poly_area)
->>> print("Area of our Western Hemisphere polygon:", west_area)
->>> print("Is polygon valid?: ", valid)
-Self-intersection at or near point 0 -90
-Convex hull of the points:  POLYGON ((7.2 -25.1, 2.2 4.2, 9.26 -2.456, 7.2 -25.1))
-Number of lines in MultiLineString: 2
-Area of our MultiPolygon: 39200.0
-Area of our Western Hemisphere polygon: 6800.0
-Is polygon valid?:  False
+ # Convex Hull of our MultiPoint --> https://en.wikipedia.org/wiki/Convex_hull
+ convex = multi_point.convex_hull
+
+ # How many lines do we have inside our MultiLineString?
+ lines_count = len(multi_line)
+
+ # Let's calculate the area of our MultiPolygon
+ multi_poly_area = multi_poly.area
+
+ # We can also access different items inside our geometry collections. We can e.g. access a single polygon from
+ # our MultiPolygon -object by referring to the index
+
+ # Let's calculate the area of our Western hemisphere (with a hole) which is at index 0
+ west_area = multi_poly[0].area
+
+ # We can check if we have a "valid" MultiPolygon. MultiPolygon is thought as valid if the individual polygons does not
+ # intersect with each other. Here, because the polygons have a common 0-meridian, we should NOT have a valid polygon
+ # This can be really useful information when trying to find topological errors from your data
+ valid = multi_poly.is_valid
+
+ # Let's see what do we have:
+ >>> print("Convex hull of the points: ", convex)
+ Convex hull of the points:  POLYGON ((7.2 -25.1, 2.2 4.2, 9.26 -2.456, 7.2 -25.1))
+
+ >>> print("Number of lines in MultiLineString:", lines_count)
+ Number of lines in MultiLineString: 2
+ 
+ >>> print("Area of our MultiPolygon:", multi_poly_area)
+ Area of our MultiPolygon: 39200.0
+ 
+ >>> print("Area of our Western Hemisphere polygon:", west_area)
+ Area of our Western Hemisphere polygon: 6800.0
+ 
+ >>> print("Is polygon valid?: ", valid)
+ Self-intersection at or near point 0 -90
+ Is polygon valid?:  False
 ```
 
 From the above we can see that MultiPolygons have exactly the same attributes available as single geometric objects but now the information such as area calculates the area of 
