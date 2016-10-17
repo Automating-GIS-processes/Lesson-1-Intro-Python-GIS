@@ -2,7 +2,7 @@
 
 ##<a name='overview'> General overview of the latter part of the course
 
-Now as we know the basics we are ready to advance and apply those skills to different GIS related tasks. During the next seven weeks we will learn how to deal with
+Now as we know the basics of Python programming we are ready to advance and apply those skills to different GIS related tasks. During the next seven weeks we will learn how to deal with
 spatial data and analyze it using "pure" Python.
  
 At the end of the course you should be able to:
@@ -34,7 +34,7 @@ party softwares such as ArcGIS. _**Why?**_ There are several reasons for doing G
 We have already used few Python modules for conducting different tasks, such as **numpy** for doing mathematical calculations or **matplotlib** for visualizing our data. 
 From now on, we will familiarize ourselves with punch of other Python modules that are useful when doing data analysis or different GIS tasks. 
 
-One drawback when compared to using a specific GIS-software such as ArcGIS, is that all of your GIS tools are under different Python modules and created by different 
+One drawback when compared to using a specific GIS-software such as ArcGIS, is that GIS tools are spread under different Python modules and created by different 
 developers. This means that you need to familiarize yourself with many different modules (and their documentation), whereas e.g. in ArcGIS everything is 
 packaged under a same module called **[arcpy](http://desktop.arcgis.com/en/arcmap/10.3/analyze/arcpy/what-is-arcpy-.htm)**.    
 
