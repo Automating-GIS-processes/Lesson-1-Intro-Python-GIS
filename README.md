@@ -1,5 +1,7 @@
 # Lesson 1 - Introduction to Python-GIS
 
+**NEW!**: You can optionally read these materials from a new website. Go to [https://automating-gis-processes.github.io/2016/](https://automating-gis-processes.github.io/2016/).
+
 ## What we have learned so far?
 
 During the Period I we focused on understanding the basic principles in programming and learned most of the basic functionalities in Python. 
